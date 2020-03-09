@@ -30,7 +30,8 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -168,15 +169,15 @@ gaps outer 10
 # finds out, if available)
 bar {
 	colors {
-		background #2f343f
+		background #1d1f21
 		statusline #2f343f
-	        separator #4b5262
+	        separator #81a2be
 
 		# colour of border, background, and text
-		focused_workspace   #2f343f #bf616a #d8dee8
-		active_workspace    #2f343f #2f343f #d8dee8
-		inactive_workspace  #2f343f #2f343f #d8dee8
-		urgent_workspace    #2f343f #ebcb8b #2f343f
+		focused_workspace   #c5c8c6 #1d1f21 #c5c8c6
+		active_workspace    #2f343f #81a2be #2f343f
+		inactive_workspace  #c5c8c6 #1d1f21 #c5c8c6
+		urgent_workspace    #c5c8c6 #1d1f21 #c5c8c6
 	}
 	position top
 	font pango:DejaVu Sans Mono 10
@@ -237,8 +238,13 @@ client.background       #1d1f21
 exec --no-startup-id compton -b
 exec --no-startup-id dunst
 
-bindsym $mod+Shift+d --release exec --no-startup-id killall dunst;
+#bindsym $mod+Shift+d --release exec --no-startup-id killall dunst;
 
 for_window [class="Yad"] floating enable
+
+default_border none
+default_floating_border none
+
+
 
 
