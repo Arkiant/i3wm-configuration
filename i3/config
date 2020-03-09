@@ -213,9 +213,6 @@ focus_follows_mouse no
 
 # Save workspace 
 # i3-save-tree --workspace 1 > ~/.i3/workspace-1.json
-# exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/samuel/.config/i3/workspace-2.json'"
-# exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/samuel/.config/i3/workspace-1.json'"
-#i3-msg "workspace 1; append_layout /home/samuel/.config/i3/workspace-1.json"
 
 # Startup applications
 exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/samuel/.config/i3/workspace-1.json'"
