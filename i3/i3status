@@ -60,7 +60,7 @@ volume master {
 
 tztime local {
 		format = "<span background='#8be9fd' color='black'>  </span><span background='#e5e9f0' color='black'> %time </span>"
-		format_time = "%a %-d %b %H:%M"
+		format_time = "+%a %-d %b %H:%M"
 }
 
 cpu_usage {

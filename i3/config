@@ -181,6 +181,7 @@ bar {
 	position top
 	font pango:DejaVu Sans Mono 10
         status_command i3status --config ~/.config/i3/i3status
+        #status_command SCRIPT_DIR=/home/samuel/.config/scripts i3blocks -c ~/.config/i3/i3blocks
 }
 
 exec --no-startup-id feh --randomize --bg-max ~/Pictures/Golang/*
@@ -216,13 +217,8 @@ focus_follows_mouse no
 #i3-msg "workspace 1; append_layout /home/samuel/.config/i3/workspace-1.json"
 
 # Startup applications
-
-workspace_layout stacking
-
-assign [class="Spotify"] 1
-assign [class="Slack"] 1
-assign [class="Firefox"] 2
-assign [class="Code"] 2
+exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/samuel/.config/i3/workspace-1.json'"
+exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/samuel/.config/i3/workspace-2.json'"
 
 exec code
 exec spotify
@@ -231,14 +227,18 @@ exec firefox
 
 # Color theme
 # colour of border, background, text, indicator, and child_border
-client.focused          #bf616a #2f343f #d8dee8 #bf616a #d8dee8
-client.focused_inactive #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.unfocused        #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.urgent           #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.placeholder      #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.background       #2f343f
+client.focused          #c5c8c6 #1d1f21 #c5c8c6 #81a2be #81a2be
+client.focused_inactive #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+client.unfocused        #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+client.urgent           #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+client.placeholder      #c5c8c6 #1d1f21 #c5c8c6 #5f819d #5f819d
+client.background       #1d1f21
 
 exec --no-startup-id compton -b
 exec --no-startup-id dunst
 
 bindsym $mod+Shift+d --release exec --no-startup-id killall dunst;
+
+for_window [class="Yad"] floating enable
+
+
